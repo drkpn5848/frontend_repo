@@ -16,11 +16,11 @@ const Home = () => {
         else{
             setToken(token);
             setIsProgress(true);
-            callApi("GET", apibaseurl + "/authservice/uinfo", null, null, loadUinfo, token);
+            callApi("GET", apibaseurl + "/authservice/rbac", null, null, loadRBAC, token);
         }
     }, []);
 
-    function loadUinfo(res){
+    function loadRBAC(res){
         setIsProgress(false);
         if(res.code != 200)
             return;
@@ -46,7 +46,7 @@ const Home = () => {
                 <div className='home-menus'>
                     <ul>
                         {menuList.map((m)=>(
-                            <li><img src={imgurl + m.icon} alt='' />{m.menu}</li>
+                            <li><img src={imgurl + m.micon} alt='' />{m.menu}</li>
                         ))}
                     </ul>
                 </div>
