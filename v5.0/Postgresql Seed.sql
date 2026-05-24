@@ -18,7 +18,7 @@ insert into menus(mid,menu,micon) values
 (2, 'My Task', 'mytask.png'),
 (3, 'Task Manager', 'taskmanager.png'),
 (4, 'User Manager', 'usermanager.png'),
-(5, 'Profile', 'profile.png');
+(5, 'My Profile', 'myprofile.png');
 
 insert into rolesmapping(mid,role) values
 (1, 3),
