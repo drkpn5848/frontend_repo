@@ -6,7 +6,7 @@ delete from rolesmapping;
 insert into users(fullname,phone,email,password,role,status) values
 ('ADMIN', '9876543210', 'admin@mth.com', '123', 3, 1),
 ('MANAGER', '1234567890', 'manager@mth.com', '123', 2, 1),
-('USER', '9876123450', 'user@mth.com', '123', 3, 1);
+('USER', '9876123450', 'user@mth.com', '123', 1, 1);
 
 insert into roles(role,rolename) values
 (1, 'User'),
