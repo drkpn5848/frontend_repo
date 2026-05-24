@@ -1,7 +1,0 @@
-package mth.models;
-
-public interface MenuItems {
-	Long mid;
-	String menu;
-	String icon;
-}
