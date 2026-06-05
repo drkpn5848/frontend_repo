@@ -12,7 +12,7 @@ export async function createTask(data, token){
     {
         const payload = jwt.verify(token, SECRETE_KEY); //Authorization
         data.createdby = payload.crid;
-        Tasks.create(data); //Insert into MongoDB
+        await Tasks.create(data); //Insert into MongoDB
         response = {code: 200, message: "New task has been created"};
     }catch(e)
     {
