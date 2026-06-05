@@ -1,3 +1,2 @@
-2026/05/24-20:21:52.606 7d38 Reusing MANIFEST D:\MTH\frontend_repo\v5.0\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2026/05/24-20:21:52.614 7d38 Recovering log #3
-2026/05/24-20:21:52.616 7d38 Reusing old log D:\MTH\frontend_repo\v5.0\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/000003.log 
+2026/06/03-09:49:30.050 7270 Creating DB D:\MTH\frontend_repo\v6.0\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb since it was missing.
+2026/06/03-09:49:30.064 7270 Reusing MANIFEST D:\MTH\frontend_repo\v6.0\backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001

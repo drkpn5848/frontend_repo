@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\MTH\frontend_repo\v6.0\backend\coreservices"/>
 			<item value="D:\MTH\frontend_repo\v5.0\backend\coreservices"/>
 		</list>
 		<list key="projectNameTemplate">
