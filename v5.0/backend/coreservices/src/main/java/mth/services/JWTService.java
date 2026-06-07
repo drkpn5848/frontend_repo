@@ -19,12 +19,11 @@ public class JWTService {
 	final SecretKey key = Keys.hmacShaKeyFor(SECRETE_KEY.getBytes());
 	
 	//Generate Token
-	public Object generateToken(Object username, Object role, Object id)
+	public Object generateToken(Object username, Object role)
 	{
 		Map<String, Object> payload = new HashMap<>();
 		payload.put("username", username);
 		payload.put("role", role);
-		payload.put("crid", id);
 		
 		return Jwts.builder()
 				.claims(payload)

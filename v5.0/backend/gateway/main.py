@@ -14,7 +14,6 @@ app.add_middleware(
 
 #Registers all routers
 app.include_router(AuthenticationRouter)
-app.include_router(TaskRouter)
 
 @app.get("/")
 def home():

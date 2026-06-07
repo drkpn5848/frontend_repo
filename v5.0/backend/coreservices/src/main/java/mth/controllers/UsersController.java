@@ -76,10 +76,4 @@ public class UsersController {
 	{
 		return US.deleteUser(id, Token);
 	}
-	
-	@GetMapping("/searchuser/{KEY}")
-	public Object searchUser(@PathVariable("KEY") String key)
-	{
-		return US.searchUser(key);
-	}
 }

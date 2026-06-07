@@ -61,7 +61,7 @@ public class UsersService {
 			
 			response.put("code", 200);
 			response.put("message", "Validation Success");
-			response.put("jwt", JWT.generateToken(U.getEmail(), U.getRole(), U.getId()));
+			response.put("jwt", JWT.generateToken(U.getEmail(), U.getRole()));
 		}catch(Exception e)
 		{
 			response.put("code", 500);
@@ -226,24 +226,6 @@ public class UsersService {
 			
 			response.put("code", 200);
 			response.put("message", "User has been deleted");
-		}catch(Exception e)
-		{
-			response.put("code", 500);
-			response.put("message", e.getMessage());
-		}
-		return response;
-	}
-	
-	//Search User
-	public Object searchUser(String key)
-	{
-		Map<String, Object> response = new HashMap<>();
-		try
-		{
-			List<Object> users = UR.searchUser(key);
-			
-			response.put("code", 200);
-			response.put("users", users);
 		}catch(Exception e)
 		{
 			response.put("code", 500);

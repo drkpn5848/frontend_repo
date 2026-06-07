@@ -26,7 +26,4 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 	
 	@Query("select U.id from Users U where U.email=:email")
 	public Object checkEmail(@Param("email") String email);
-	
-	@Query("select U from Users U where lower(U.fullname) like concat('%', lower(:key) ,'%')")
-	public List<Object> searchUser(@Param("key") String key);
 }
