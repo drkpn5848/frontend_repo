@@ -39,3 +39,9 @@ async def deleteTask(ID: str, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
         response = await client.delete(NODE_URL + f"/task/deletetask/{ID}", headers={'Token': Token})
     return response.json()
+
+@router.get("/vectorsearch/{QUERY}")
+async def vectorSearch(QUERY: str, Token: str = Header(...)):
+    async with httpx.AsyncClient() as client:
+        response = await client.get(NODE_URL + f"/task/vectorsearch/{QUERY}", headers={'Token': Token})
+    return response.json()

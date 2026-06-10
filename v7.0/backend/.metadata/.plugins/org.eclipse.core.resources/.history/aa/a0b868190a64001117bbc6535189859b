@@ -1,0 +1,16 @@
+spring.application.name=coreservices
+
+#Postgresql Configuration
+spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.datasource.url=jdbc:postgresql://localhost:5432/mth
+spring.datasource.url=jdbc:postgresql://db1.cz0aa4ac8yyb.ap-south-1.rds.amazonaws.com:5432/mth
+spring.datasource.username=postgres
+spring.datasource.password=Admin123
+
+#JPA Configuration
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+#Port Number
+server.port=8001

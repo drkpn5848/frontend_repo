@@ -1,6 +1,7 @@
 import Tasks from "../models/tasks.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import * as vectorService from './vectorService.js';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ export async function createTask(data, token){
     {
         const payload = jwt.verify(token, SECRETE_KEY); //Authorization
         data.createdby = payload.crid;
+        data.vector = await vectorService.generateVector(data.title + " " + data.description);
         await Tasks.create(data); //Insert into MongoDB
         response = {code: 200, message: "New task has been created"};
     }catch(e)
@@ -68,6 +70,8 @@ export async function updateTask(id, data, token)
     let response;
     try{
         const payload = jwt.verify(token, SECRETE_KEY); //Authorization
+
+        data.vector = await vectorService.generateVector(data.title + " " + data.description);
 
         await Tasks.findOneAndUpdate({_id: id}, data);
 

@@ -1,4 +1,5 @@
-export const apibaseurl = "http://localhost:8000";
+// export const apibaseurl = "http://localhost:8000";
+export const apibaseurl = "https://gateway-k1ye.onrender.com";
 export const imgurl = import.meta.env.BASE_URL;
 export function callApi(reqMethod, apiUrl, jsonData, formData, responseHandler, jwtToken = "")
 {
