@@ -15,8 +15,8 @@ router.get("/getalltasks/:PAGE/:SIZE", async (req, res)=>{
 
 router.get("/gettask/:ID", async (req, res)=>{
     const {ID} = req.params;
-    const reponse = await taskService.getTask(ID, req.headers.token);
-    res.json(reponse);
+    const response = await taskService.getTask(ID, req.headers.token);
+    res.json(response);
 });
 
 router.put("/updatetask/:ID", async (req, res)=>{
@@ -31,9 +31,9 @@ router.delete("/deletetask/:ID", async (req, res)=>{
     res.json(response);
 });
 
-router.get("/vectorsearch/:QUERY", async (req, res)=>{
-    const {QUERY} = req.params;
-    const response = await taskService.vectorSearch(QUERY, req.headers.token);
+router.get("/vectorsearch/:KEY", async (req, res)=>{
+    const {KEY} = req.params;
+    const response = await taskService.vectorSearch(KEY, req.headers.token);
     res.json(response);
 });
 

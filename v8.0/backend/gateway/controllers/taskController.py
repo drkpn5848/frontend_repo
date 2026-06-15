@@ -19,29 +19,37 @@ async def createTask(data: TaskSchema, Token: str = Header(...)):
 @router.get("/getalltasks/{PAGE}/{SIZE}")
 async def getAllTasks(PAGE: int, SIZE: int, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
-        response = await client.get(NODE_URL + f"/task/getalltasks/{PAGE}/{SIZE}", headers={'Token': Token})
+        response = await client.get(NODE_URL + f"/task/getalltasks/{PAGE}/{SIZE}", 
+                                    headers={'Token': Token})
     return response.json()
 
 @router.get("/gettask/{ID}")
 async def getTask(ID: str, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
-        response = await client.get(NODE_URL + f"/task/gettask/{ID}", headers={'Token': Token})
+        response = await client.get(NODE_URL + f"/task/gettask/{ID}", 
+                                    headers={'Token': Token})
     return response.json()
+
 
 @router.put("/updatetask/{ID}")
 async def updateTask(ID: str, data: TaskSchema, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
-        response = await client.put(NODE_URL + f"/task/updatetask/{ID}", json=data.model_dump(), headers={'Token': Token})
+        response = await client.put(NODE_URL + f"/task/updatetask/{ID}", 
+                                    json=data.model_dump(),
+                                    headers={'Token': Token})
     return response.json()
 
 @router.delete("/deletetask/{ID}")
 async def deleteTask(ID: str, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
-        response = await client.delete(NODE_URL + f"/task/deletetask/{ID}", headers={'Token': Token})
+        response = await client.delete(NODE_URL + f"/task/deletetask/{ID}", 
+                                    headers={'Token': Token})
     return response.json()
 
-@router.get("/vectorsearch/{QUERY}")
-async def vectorSearch(QUERY: str, Token: str = Header(...)):
+
+@router.get("/vectorsearch/{KEY}")
+async def vectorSearch(KEY: str, Token: str = Header(...)):
     async with httpx.AsyncClient() as client:
-        response = await client.get(NODE_URL + f"/task/vectorsearch/{QUERY}", headers={'Token': Token})
+        response = await client.get(NODE_URL + f"/task/vectorsearch/{KEY}", 
+                                    headers={'Token': Token})
     return response.json()
